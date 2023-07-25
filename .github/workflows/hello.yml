@@ -12,3 +12,11 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "Hello World!"
+
+  goodbye:                 # Fix indentation: the job should be at the same level as 'hello'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Say Goodbye  # Fix indentation: the step should be at the same level as 'runs-on'
+        run: echo "Goodbye!"
+
