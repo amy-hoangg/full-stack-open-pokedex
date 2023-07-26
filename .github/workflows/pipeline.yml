@@ -22,13 +22,9 @@ jobs:
           - name: test
             run: npm run test           
 
-          - name: Start Development Server
-            run: npm start &
-    
-          - name: Wait for Development Server
-            run: |
-              while ! nc -z localhost 8080; do sleep 1; done
-              sleep 5  # Adding a slight delay for the server to stabilize
-    
           - name: e2e tests
-            run: npm run test:e2e
+            uses: cypress-io/github-action@v5
+            with:
+              command: npm run test:e2e
+              start: npm run start-prod
+              wait-on: http://localhost:5001
