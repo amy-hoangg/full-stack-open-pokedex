@@ -28,3 +28,7 @@ jobs:
               command: npm run test:e2e
               start: npm run start-prod
               wait-on: http://localhost:5001
+
+          - name: Render GitHub Action
+            uses: Bounceapp/render-action@0.7.0
+            
